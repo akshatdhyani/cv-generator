@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 50px auto;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        hr {
+            border: 1px solid #dee2e6;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #495057;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- User Details -->
+        <h2 class="text-center">{{ user_profile.name }}</h2>
+        <p class="text-center">
+            <strong>Email:</strong> {{ user_profile.email }} | 
+            <strong>Phone:</strong> {{ user_profile.phone }}
+        </p>
+        <hr />
+
+        <!-- Summary Section -->
+        <div>
+            <p class="section-title">Summary</p>
+            <p>{{ user_profile.summary }}</p>
+        </div>
+        <hr />
+
+        <!-- Skills Section -->
+        <div>
+            <p class="section-title">Skills</p>
+            <p>{{ user_profile.skills }}</p>
+        </div>
+        <hr />
+
+        <!-- Education Section -->
+        <div>
+            <p class="section-title">Education</p>
+            <ul>
+                <li><strong>School:</strong> {{ user_profile.school }}</li>
+                <li><strong>Degree:</strong> {{ user_profile.degree }} from {{ user_profile.university }}</li>
+            </ul>
+        </div>
+        <hr />
+
+        <!-- Work Experience Section -->
+        <div>
+            <p class="section-title">Previous Work</p>
+            <p>{{ user_profile.previous_work }}</p>
+        </div>
+    </div>
+</body>
+</html>
